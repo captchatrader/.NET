@@ -49,7 +49,7 @@ Get the wait time on the current user.  If no user specified, return the wait ti
 
 ### GetQueueSize
 
-Get the solver queue size.
+Get the solver queue size. Two numbers are returned: the number of users ahead of the requesting user and the total queue size.
 
 	public int[] GetQueueSize()
 
@@ -77,4 +77,4 @@ Synchronous Submit Example
 	CaptchaTraderAPI ct = new CaptchaTraderAPI(<apiKey>, <username>, <password>);
 	Uri url = new Uri("http://www.google.com/recaptcha/api/image?c=03AHJ_VuuH-DBRSxMQgwIJM4L5B5-CmEDLCigmIPZcc50vRJVSXRIp0dDZKRskWTXgiM7m0T2nus0PH4gFWC74QPWjX9W9dzpN-qpRWQJ3GO7v4nF9oDCvI9TtfISCFeIcwzMJbh4aqfOq1_rhWjJ0Pmpbu-Uy1-Yj7A");
 	string solution = ct.Submit(url);
-	target.Respond(true);
+	ct.Respond(true);
